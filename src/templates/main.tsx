@@ -29,7 +29,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     other: [
-      applyAnalytics(document),
+      // applyAnalytics(document),
       applyTheme(document, defaultThemeConfig),
     ].join("\n"),
   };
@@ -52,15 +52,15 @@ const Main: Template<TemplateRenderProps> = (props) => {
   const { document } = props;
 
   return (
-    <AnalyticsProvider
-      apiKey={document?._env?.YEXT_PUBLIC_EVENTS_API_KEY}
-      templateData={props}
-      currency="USD"
-    >
-      <VisualEditorProvider templateProps={props}>
-        <Render config={mainConfig} data={JSON.parse(document.__.layout)} />
-      </VisualEditorProvider>
-    </AnalyticsProvider>
+    // <AnalyticsProvider
+    //   apiKey={document?._env?.YEXT_PUBLIC_EVENTS_API_KEY}
+    //   templateData={props}
+    //   currency="USD"
+    // >
+    <VisualEditorProvider templateProps={props}>
+      <Render config={mainConfig} data={JSON.parse(document.__.layout)} />
+    </VisualEditorProvider>
+    // </AnalyticsProvider>
   );
 };
 
