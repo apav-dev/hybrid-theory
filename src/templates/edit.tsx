@@ -23,6 +23,7 @@ import { type Config } from "@measured/puck";
 import tailwindConfig from "../../tailwind.config";
 
 const componentRegistry: Record<string, Config<any>> = {
+  "repo-location": mainConfig,
   main: mainConfig,
   directory: directoryConfig,
   locator: locatorConfig,
