@@ -30,7 +30,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     viewport: "width=device-width, initial-scale=1",
     other: [
       // applyAnalytics(document),
-      applyTheme(document, defaultThemeConfig),
+      applyTheme(document, "./", defaultThemeConfig),
     ].join("\n"),
   };
 };

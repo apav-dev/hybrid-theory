@@ -8,26 +8,25 @@ import {
   MainConfigProps,
   mainConfig,
 } from "@yext/visual-editor";
+import { HeadingTextProps, HeadingText } from "./components/HeadingText";
 
-interface DevProps extends MainConfigProps, DirectoryCategoryProps {}
+interface DevProps {
+  HeadingText: HeadingTextProps;
+}
 
 const components: Config<DevProps>["components"] = {
-  ...mainConfig.components,
-  ...DirectoryCategoryComponents,
+  HeadingText: HeadingText,
 };
 
 export const devConfig: Config<DevProps> = {
   components,
-  categories: {
-    ...mainConfig.categories,
-    directory: {
-      title: "Directory",
-      components: DirectoryCategory,
-    },
-  },
   root: mainConfig.root,
 };
 
-export const componentRegistry: Record<string, Config<DevProps>> = {
+export const componentRegistry: Record<
+  string,
+  Config<MainConfigProps | DevProps>
+> = {
   dev: devConfig,
+  main: mainConfig,
 };

@@ -43,7 +43,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: title,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
-    other: [applyTheme(document, defaultThemeConfig)].join("\n"),
+    other: [applyTheme(document, "./", defaultThemeConfig)].join("\n"),
   };
 };
 
