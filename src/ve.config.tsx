@@ -27,6 +27,6 @@ export const componentRegistry: Record<
   string,
   Config<MainConfigProps | DevProps>
 > = {
-  dev: devConfig,
+  "hybrid-location": devConfig,
   main: mainConfig,
 };
